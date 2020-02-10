@@ -1,11 +1,13 @@
 # React-redux-reactor-nextjs
 A boilerplate for building a **server-side-rendered** website with React, Redux, Reactor &amp; Next.js
+<br/><br/>
 
 ## Before you start
 let's install some dev tools.
 1. [Redux Devtools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 2. [Immutable JS formmater](https://chrome.google.com/webstore/detail/immutablejs-object-format/hgldghadipiblonfkkicmgcbbijnpeog)
 3. [React Devtools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+<br/><br/>
 
 ## Steps
 1. Fork
@@ -13,10 +15,11 @@ let's install some dev tools.
 3. Install dependencies `yarn`
 4.  Run dev: `npm run dev`
 5. Open your browser at `localhost:3000`
+<br/><br/>
 
 ## Connecting to the Reactor CMS
 Go to the `reactor.config` file and change the `userId` to the ID string that was provided to you by Reactor.
-
+<br/><br/>
 
 ## In the box
 ### Some utility components (located in the `shared`  folder)
