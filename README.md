@@ -19,6 +19,11 @@ let's install some dev tools.
 
 ## Connecting to the Reactor CMS
 Go to the `reactor.config` file and change the `userId` to the ID string that was provided to you by Reactor.
+```$xslt
+module.exports = {
+  userId: 'your_reactor_id',
+};
+```
 <br/><br/>
 
 ## In the box
