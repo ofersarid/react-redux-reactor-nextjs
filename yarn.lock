@@ -5777,9 +5777,9 @@ react@^16.12.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-reactor-connect@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/reactor-connect/-/reactor-connect-1.0.8.tgz#dab592a2cd5d2412a58e88e677cdb5921fd22317"
+reactor-connect@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/reactor-connect/-/reactor-connect-1.0.9.tgz#c095ab4615820d0858a5bd518ebdcfa4741ca6b1"
   dependencies:
     firebase "^7.8.1"
     immutable "^4.0.0-rc.12"
