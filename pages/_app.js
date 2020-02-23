@@ -11,6 +11,7 @@ import combined from '../combined-reducers';
 import { device } from '../services';
 import { Helmet } from '../shared';
 import reactorConfig from '../reactor.config';
+import { NavBar } from '../containers';
 
 const makeStore = (initialState, options) => {
   const store = createStore(combined, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)));
@@ -20,7 +21,9 @@ const makeStore = (initialState, options) => {
 class MyApp extends App {
   static async getInitialProps({ ctx }) {
     await ctx.store.dispatch(reactor.actions.fetch(reactorConfig.userId));
-    ctx.store.dispatch(device.actions.ssr(ctx.req.headers['user-agent']));
+    if (ctx.req) {
+      ctx.store.dispatch(device.actions.ssr(ctx.req.headers['user-agent']));
+    }
     return {};
   }
 
@@ -29,7 +32,7 @@ class MyApp extends App {
     return (
       <Provider store={store} >
         <Helmet />
-        <h1>App Header</h1>
+        <NavBar />
         <Component {...pageProps} isServer={isServer} />
       </Provider >
     );

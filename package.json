@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "lint": "esw ./pages ./services ./shared ./*.js",
-    "lint-watch": "esw ./pages ./services ./shared ./*.js -w",
+    "lint": "esw ./pages ./services ./shared ./containers ./*.js",
+    "lint-watch": "esw ./pages ./services ./shared ./containers ./*.js -w",
     "build": "next build",
     "start": "next start"
   },
