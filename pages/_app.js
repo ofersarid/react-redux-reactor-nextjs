@@ -20,10 +20,13 @@ const makeStore = (initialState, options) => {
 
 class MyApp extends App {
   static async getInitialProps({ ctx }) {
-    await ctx.store.dispatch(reactor.actions.fetch(reactorConfig.userId));
-    if (ctx.req) {
-      // mimic device on server
-      ctx.store.dispatch(device.actions.ssr(ctx.req.headers['user-agent']));
+    const reactorReady = ctx.store.getState().getIn(['reactor', 'ready']);
+    if (!reactorReady) {
+      await ctx.store.dispatch(reactor.actions.fetch(reactorConfig.userId));
+      if (ctx.req) {
+        // mimic device on server
+        ctx.store.dispatch(device.actions.ssr(ctx.req.headers['user-agent']));
+      }
     }
     return {};
   }
