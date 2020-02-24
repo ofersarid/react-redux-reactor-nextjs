@@ -1,21 +1,20 @@
 import React, { Fragment } from 'react';
-// import { useSelector, connect } from 'react-redux';
-// import reactor from 'reactor-connect';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { withRouter } from 'next/router';
-import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import reactor from 'reactor-connect';
 
-const Index = ({ router, isServer }) => { // eslint-disable-line
-  // const data = useSelector(state => reactor.selectors.collection(state, 'test collection'));
+const Index = () => {
+  const data = useSelector(state => reactor.selectors.collection(state, 'my collection'));
+  console.log(data);
   return (
-    <Fragment>
-      <h1>Hello World!</h1>
-      <Link href="/contact-us" >
-        <a>contact us</a>
-      </Link>
-    </Fragment>
+    <Fragment >
+      <h1 >Hello World!</h1 >
+      <ul >
+        {data.map(itm => (
+          <li key={itm.id} >{itm['my-key']}</li >
+        ))}
+      </ul >
+    </Fragment >
   );
 };
 
-export default compose(withRouter, connect())(Index);
+export default Index;
